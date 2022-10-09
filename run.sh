@@ -1,0 +1,1 @@
+singularity run sumq_v1.0.sif

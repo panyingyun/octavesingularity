@@ -1,0 +1,18 @@
+# sumq.def
+BootStrap: docker
+From: gnuoctave/octave:7.2.0
+
+%labels
+    Author  gdy
+    Version sumqv0.1
+
+%runscript
+    cd  /opt/app/
+    exec octave-cli /opt/app/main.m "${@}"
+
+%files
+    ./app/main.m     /opt/app/
+    ./app/gdyadd.m   /opt/app/
+
+%help
+    cpi: singularity run sumq_v0.1.sif  
