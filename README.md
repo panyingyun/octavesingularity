@@ -9,12 +9,33 @@
 - https://hub.docker.com/r/gnuoctave/octave
 - https://hub.docker.com/r/gnuoctave/octave/tags
 
-# 打包
+
+# docker
 ```bash
-sudo singularity build sumq_v0.1.sif sumq.def
+    docker pull gnuoctave/octave:7.2.0
 ```
 
-# 运行
+# singularity run 
 ```bash
-singularity run sumq_v1.0.sif
+    singularity pull docker://gnuoctave/octave:7.2.0
+```
+
+##### Start container (command-line interface)
+```bash
+    singularity run octave_7.2.0.sif
+```
+
+##### Start container GUI (experimental)
+```bash
+    singularity exec --bind /run/user octave_7.2.0.sif octave --gui
+```
+
+##### octave doc
+https://www.cainiaojc.com/matlab/matlab-m-files.html
+
+
+##### 测试
+```bash
+	singularity run sumq_v0.1.sif
+	singularity run -B $PWD/input.dat:/opt/app/input.dat sumq_v0.1.sif
 ```

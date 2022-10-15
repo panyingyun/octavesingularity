@@ -13,6 +13,7 @@ From: gnuoctave/octave:7.2.0
 %files
     ./app/main.m     /opt/app/
     ./app/gdyadd.m   /opt/app/
+    ./app/input.dat   /opt/app/
 
 %help
     cpi: singularity run sumq_v0.1.sif  
