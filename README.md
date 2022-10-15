@@ -11,12 +11,6 @@
 	singularity run -B $PWD/input.dat:/opt/app/input.dat sumq_v0.1.sif
 ```
 
-### 测试
-```bash
-	singularity run sumq_v0.1.sif
-	singularity run -B $PWD/input.dat:/opt/app/input.dat sumq_v0.1.sif
-```
-
 ### 参考
 
 - octave https://octave.org/download
