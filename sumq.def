@@ -1,6 +1,6 @@
 # sumq.def
 BootStrap: docker
-From: gnuoctave/octave:7.2.0
+From: dtcae.yuansuan.cn/gnuoctave/octave:7.2.0
 
 %labels
     Author  gdy
