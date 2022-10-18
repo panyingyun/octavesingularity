@@ -16,4 +16,4 @@ From: harbor.yuansuan.cn/gnuoctave/ysoctave:7.2.0
     ./app/input.dat   /opt/app/
 
 %help
-    cpi: singularity run sumq_v0.1.sif  
+    sumq: singularity run sumq_v0.1.sif  
