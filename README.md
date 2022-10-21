@@ -1,40 +1,9 @@
+## sum 
+(1) 演示如何打包octave singularity容器
 
-### 打包
-```bash
-    sudo singularity build sumq_v0.1.sif sumq.def
-```
-### 测试
-```bash
-    使用内置文件
-	singularity run sumq_v0.1.sif
-    外挂输入文件
-	singularity run -B $PWD/input.dat:/opt/app/input.dat sumq_v0.1.sif
-```
+## sumtofile
+(1) 演示如何打包octave singularity容器
+(2) 演示如何从CSV文件读取数据，如何写入CSV文件
+(3) 演示多应用入口，即同一个容器中打包多个应用
 
-### 参考
-
-- octave https://octave.org/download
-
-- octave  https://docs.octave.org/octave.pdf
-
-- octave docker hub  https://hub.docker.com/r/gnuoctave/octave
-
-- octave docker hub tag https://hub.docker.com/r/gnuoctave/octave/tags
-
-
-### 参考命令
-
-- pull 
-```bash
-    singularity pull docker://gnuoctave/octave:7.2.0
-```
-
-- command-line run 
-```bash
-    singularity run octave_7.2.0.sif
-```
-
-- GUI command-line run 
-```bash
-    singularity exec --bind /run/user octave_7.2.0.sif octave --gui
-```
+	
