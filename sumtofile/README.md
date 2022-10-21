@@ -1,13 +1,13 @@
 
 ### 打包
 ```bash
-     sudo singularity build apps_v0.1.sif apps.def
+sudo singularity build apps_v0.1.sif apps.def
 ```
 ### 测试多个应用运行
 ```bash
-    运行应用sum 
-    singularity run --app sum -B $PWD/appsum:/opt/appsum apps_v0.1.sif
+运行应用sum 
+singularity run --app sum -B $PWD/appsum:/opt/appsum apps_v0.1.sif
 
-    运行应用square
-	singularity run --app square -B $PWD/appsquare:/opt/appsquare apps_v0.1.sif
+运行应用square
+singularity run --app square -B $PWD/appsquare:/opt/appsquare apps_v0.1.sif
 ```
