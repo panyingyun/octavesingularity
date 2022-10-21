@@ -7,16 +7,16 @@ From: harbor.yuansuan.cn/gnuoctave/ysoctave:7.2.0
     Version sumqv0.1
 
 %post
+    mkdir -p /opt/data/
     mkdir -p /opt/appsum/
     mkdir -p /opt/appsquare/
 
 %files
     ./appsum/main.m     	 /opt/appsum/
     ./appsum/gdysum.m   	 /opt/appsum/
-    ./appsum/matrix.csv 	 /opt/appsum/
 	./appsquare/main.m     	 /opt/appsquare/
 	./appsquare/gdysquare.m  /opt/appsquare/
-	./appsquare/matrix.csv   /opt/appsquare/
+	./appdata/matrix.csv     /opt/appdata/
 
 ##############################
 # sum
@@ -27,7 +27,7 @@ From: harbor.yuansuan.cn/gnuoctave/ysoctave:7.2.0
     exec octave-cli /opt/appsum/main.m "${@}"
 
 %apphelp sum
-    apps: singularity run --app sum -B $PWD/appsum:/opt/appsum apps_v0.1.sif 
+    apps: singularity run --app sum -B $PWD/appdata:/opt/appdata apps_v0.1.sif 
 
 ##############################
 # square
@@ -38,4 +38,4 @@ From: harbor.yuansuan.cn/gnuoctave/ysoctave:7.2.0
     exec octave-cli /opt/appsquare/main.m "${@}"
 
 %apphelp square
-    apps: singularity run --app square -B $PWD/appsquare:/opt/appsquare apps_v0.1.sif 
+    apps: singularity run --app square -B $PWD/appdata:/opt/appdata apps_v0.1.sif 
