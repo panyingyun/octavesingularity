@@ -6,8 +6,9 @@ From: harbor.yuansuan.cn/gnuoctave/ysoctave:7.2.0
     Author  gdy
     Version sumqv0.1
 
-%runscript
-    exec octave-cli "${@}"
+%post
+    mkdir -p /opt/appsum/
+    mkdir -p /opt/appsquare/
 
 %files
     ./appsum/main.m     	 /opt/appsum/
@@ -17,5 +18,24 @@ From: harbor.yuansuan.cn/gnuoctave/ysoctave:7.2.0
 	./appsquare/gdysquare.m  /opt/appsquare/
 	./appsquare/matrix.csv   /opt/appsquare/
 
-%help
-    apps: singularity run apps_v0.1.sif  
+##############################
+# sum
+##############################
+
+%apprun sum
+    cd  /opt/appsum/
+    exec octave-cli /opt/appsum/main.m "${@}"
+
+%apphelp sum
+    apps: singularity run --app sum -B $PWD/appsum:/opt/appsum apps_v0.1.sif 
+
+##############################
+# square
+##############################
+
+%apprun square
+    cd  /opt/appsquare/
+    exec octave-cli /opt/appsquare/main.m "${@}"
+
+%apphelp square
+    apps: singularity run --app square -B $PWD/appsquare:/opt/appsquare apps_v0.1.sif 
