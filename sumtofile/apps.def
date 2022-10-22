@@ -6,11 +6,6 @@ From: harbor.yuansuan.cn/gnuoctave/ysoctave:7.2.0
     Author  gdy
     Version sumqv0.1
 
-%post
-    mkdir -p /opt/data/
-    mkdir -p /opt/appsum/
-    mkdir -p /opt/appsquare/
-
 %files
     ./appsum/main.m     	 /opt/appsum/
     ./appsum/gdysum.m   	 /opt/appsum/
